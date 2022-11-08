@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,200&family=Roboto:ital,wght@1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 20px;
+    background-color: #E8FFF7;
+}
+
+
+/*HEADER*/
+.encabezado {
+    background-image: url("../images/inicio1.jpg");
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    opacity: 90%;
+    grid-area: header;
+}
+
+.encabezado div {
+    height: 100px;
+    width: 500px;
+    position: absolute;
+    
+    top: 0;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.encabezado div img {
+    width: 150px;
+}
+
+/*NAV*/
+
+nav {
+    background-color: #285943;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    grid-area: nav;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 20px;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white; 
+}
+
+/*SECCIONES*/
+
+section {
+    margin: 16px;
+    padding: 8px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: -2px 4px 20px 3px rgba(0,0,0,0.67);
+}
+
+section img {
+    width: 300px;
+    border-radius: 4px;
+}
+
+section button {
+    border-radius: 5px;
+    background-color: #77AF9C;
+    width: 130px;
+    height: 48px;
+    cursor: pointer;
+    box-shadow: 9px 9px 6px 1px rgba(0,0,0,0.75);
+}
+
+/*FOOTER*/
+
+footer {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: #285943;
+    text-align: center;
+    grid-area: footer;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 32px;
+}
+
+.tipoA {
+    grid-area: tipoA;
+}
+
+.tipoB {
+    grid-area: tipoB;
+}
+
+.tipoC {
+    grid-area: tipoC;
+}
+
+.gridPadre {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "tipoA tipoB tipoC"
+    "tipoA tipoB tipoC"
+    "footer footer footer"
+    ;
+}
+
+/*RESPONSIVE*/
+
+/*Tableta*/
+@media (min-width: 700px) and (max-width: 1100px) {
+    .gridPadre {
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "tipoA tipoA"
+        "tipoB tipoB"
+        "tipoC tipoC"
+        "footer footer";
+    }
+}
+
+/*VISTA MÓVIL*/
+@media (min-width: 300px) and (max-width: 699px) {
+    .gridPadre {
+        grid-template-areas: 
+        "header"
+        "nav"
+        "tipoA"
+        "tipoB"
+        "tipoC"
+        "footer";
+    }
+
+    html {
+        font-size: 80%;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .encabezado div {
+        max-width: 90%;
+    }
+
+    section {
+        text-align: center;
+    }
+
+    section img {
+        width: 300px;
+    }
+}
